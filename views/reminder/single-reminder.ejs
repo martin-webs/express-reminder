@@ -1,0 +1,27 @@
+<div class="card text-bg-primary mb-3 mt-3 mx-auto" style="max-width: 18rem;">
+	<div class="card-header"><strong>
+			<%= reminderItem.title %>
+		</strong></div>
+	<div class="card-body">
+		<h5 class="card-title">
+			<%= reminderItem.description %>
+		</h5>
+		<p class="card-text">
+			<%= reminderItem.details %>
+		</p>
+		<span>Completed:</span>
+		<% if(reminderItem.completed==true) { %>
+			<span class="badge badge-success">True</span>
+			<% } else if (reminderItem.completed==false) { %>
+				<span class="badge badge-danger">False</span>
+				<% } %>
+					<div class="d-flex justify-content-between mt-3">
+						<a class="btn btn-primary" href=<%="/reminder/" + reminderItem.id + "/edit" %>>Edit</a>
+						<a class="btn btn-primary" href=<%="/reminder/" + reminderItem.id + "/delete" %>>Delete</a>
+					</div>
+				</div>
+			</div>
+
+			<!-- <form class="deleteForm" method="POST" action=<%= "/reminder/delete/" + reminderItem.id %>>
+		<button type="submit" class="btn btn-primary">Delete</button>
+	</form> -->
