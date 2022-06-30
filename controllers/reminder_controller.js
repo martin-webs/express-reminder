@@ -1,7 +1,7 @@
 let Database = require('../Database');
 
 let reminderController = {
-  hello: (req, res) => res.send('Hello World'),
+  // hello: (req, res) => res.send('Hello World'),
   list: (req, res) =>
     res.render('reminder/index', { reminders: Database.cindy.reminders }),
   new: (req, res) => res.render('reminder/create'),
