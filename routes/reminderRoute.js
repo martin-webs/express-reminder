@@ -1,10 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const database = require('../models/userModel').database;
-const {
-  ensureAuthenticated,
-  forwardAuthenticated,
-} = require('../middleware/checkAuth');
+const { ensureAuthenticated } = require('../middleware/checkAuth');
 
 router.get('/', ensureAuthenticated, (req, res) => {
   res.render('reminder/index', {
@@ -19,6 +16,7 @@ router.get('/new', ensureAuthenticated, (req, res) => {
 
 router.post('/', ensureAuthenticated, (req, res) => {
   let reminder = {
+    reminderId: req.user.reminders.length + 1,
     title: req.body.title,
     description: req.body.description,
     details: req.body.details,
@@ -30,7 +28,7 @@ router.post('/', ensureAuthenticated, (req, res) => {
 
 router.get('/:id', ensureAuthenticated, (req, res) => {
   let reminderToFind = req.user.reminders.find(
-    (reminder) => reminder.id == req.params.id
+    (reminder) => reminder.reminderId == req.params.id
   );
   if (reminderToFind != undefined) {
     res.render('reminder/single-reminder', {
@@ -39,6 +37,44 @@ router.get('/:id', ensureAuthenticated, (req, res) => {
   } else {
     res.redirect('/reminder');
   }
+});
+
+router.get('/:id/edit', ensureAuthenticated, (req, res) => {
+  let reminderToFind = req.user.reminders.find(
+    (reminder) => reminder.reminderId == req.params.id
+  );
+  if (reminderToFind != undefined) {
+    res.render('reminder/edit', {
+      reminder: reminderToFind,
+    });
+    req.user.reminders.splice(req.user.reminders.indexOf(reminderToFind), 1);
+  } else {
+    res.redirect('/reminder');
+  }
+});
+
+router.post('/:id/edit', ensureAuthenticated, (req, res) => {
+  let reminder = {
+    reminderId: req.params.id,
+    title: req.body.title,
+    description: req.body.description,
+    details: req.body.details,
+    completed: false,
+  };
+  if (reminder != undefined) {
+    req.user.reminders.push(reminder);
+  }
+  res.redirect('/reminder');
+});
+
+router.get('/:id/delete', ensureAuthenticated, (req, res) => {
+  let reminderToFind = req.user.reminders.find(
+    (reminder) => reminder.reminderId == req.params.id
+  );
+  if (reminderToFind != undefined) {
+    req.user.reminders.splice(req.user.reminders.indexOf(reminderToFind), 1);
+  }
+  res.redirect('/reminder');
 });
 
 module.exports = router;

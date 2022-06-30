@@ -11,7 +11,7 @@
       <% } else if (reminder.completed == false) { %>
         <span class="badge badge-danger">False</span>
       <% } %>  
-      <a class="btn btn-primary d-block mt-3" href=<%= "/reminder/" + reminder.id %>>View</a>
+      <a class="btn btn-primary d-block mt-3" href=<%= "/reminder/" + reminder.reminderId %>>View</a>
     </div>
   </div>
   <% }) %>

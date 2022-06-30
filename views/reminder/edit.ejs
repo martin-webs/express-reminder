@@ -1,17 +1,17 @@
 <div class="container">
-	<form action="/reminder" method="POST">
+	<form action="/reminder/<%= reminder.reminderId %>/edit" method="POST">
 		<div class="form-group">
 			<label for="title">Title</label>
-			<input type="text" class="form-control" id="titleInput" value="<%= reminderItem.title %>" name="title">
+			<input type="text" class="form-control" id="titleInput" value="<%= reminder.title %>" name="title">
 		</div>
 		<div class="form-group">
 			<label for="description">Description</label>
 			<textarea class="form-control" id="descriptionInput" rows="3"
-				name="description"><%= reminderItem.description %></textarea>
+				name="description"><%= reminder.description %></textarea>
 		</div>
 		<div class="form-group">
 			<label for="details">Details</label>
-			<textarea class="form-control" name="details" id="detailsInput" rows="3"><%= reminderItem.details %></textarea>
+			<textarea class="form-control" name="details" id="detailsInput" rows="3"><%= reminder.details %></textarea>
 		</div>
 		<div class="d-flex justify-content-between">
 			<button type="submit" class="btn btn-secondary">Submit</button>
