@@ -49,7 +49,7 @@ app.use('/auth', authRoute);
 app.use('/reminder', reminderRoute);
 
 // case 3: user goes to localhost:8000/reminder/new  -> show a CREATE REMINDER PAGE
-app.get('/reminder/new', reminderRoute);
+// app.get('/reminder/new', reminderRoute);
 
 // case 4: user sends reminder data to us (creates a reminder)
 // app.use('/reminder', reminderRoute);

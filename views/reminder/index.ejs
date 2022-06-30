@@ -1,4 +1,3 @@
-<!-- <%- include ('../partials/navbar') %> -->
 <div class="container">
   <% reminders.forEach(reminder => { %>
   <div class="card text-bg-primary mb-3 mt-3" style="max-width: 18rem;">
@@ -12,7 +11,7 @@
       <% } else if (reminder.completed == false) { %>
         <span class="badge badge-danger">False</span>
       <% } %>  
-      <a class="btn btn-primary d-block mt-3" href=<%= "/reminder/" + user.id %>>View</a>
+      <a class="btn btn-primary d-block mt-3" href=<%= "/reminder/" + reminder.id %>>View</a>
     </div>
   </div>
   <% }) %>

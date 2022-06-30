@@ -29,7 +29,16 @@ router.post('/', ensureAuthenticated, (req, res) => {
 });
 
 router.get('/:id', ensureAuthenticated, (req, res) => {
-  res.render('single-reminder', { reminders: req.user.reminders });
+  let reminderToFind = req.user.reminders.find(
+    (reminder) => reminder.id == req.params.id
+  );
+  if (reminderToFind != undefined) {
+    res.render('reminder/single-reminder', {
+      reminder: reminderToFind,
+    });
+  } else {
+    res.redirect('/reminder');
+  }
 });
 
 module.exports = router;

@@ -5,13 +5,13 @@ let database = [
     email: "jimmy123@gmail.com",
     password: "jimmy123!",
     reminders: [
-      {
+      { id: 1,
         title: 'Birthdays',
         description: 'Greet Isra next Friday',
         details: 'Isra is the best, we got to meet him on Zoom',
         completed: false,
       },
-			{
+			{ id: 2,
         title: 'Movies',
         description: 'Buy two movies',
         details: 'Tonight',
@@ -25,13 +25,13 @@ let database = [
     email: "johnny123@gmail.com",
     password: "johnny123!",
     reminders: [
-      {
+      { id: 1,
         title: 'Soccer',
         description: 'Greet Isra next Friday',
         details: 'Isra is the best, we got to meet him on Zoom',
         completed: false,
       },
-			{
+			{ id: 2,
         title: 'Piano',
         description: 'Buy two movies',
         details: 'Tonight',
@@ -45,13 +45,13 @@ let database = [
     email: "jonathan123@gmail.com",
     password: "jonathan123!",
     reminders: [
-      {
+      { id: 1,
         title: 'web',
         description: 'Greet Isra next Friday',
         details: 'Isra is the best, we got to meet him on Zoom',
         completed: false,
       },
-			{
+			{ id: 2,
         title: 'servers',
         description: 'Buy two movies',
         details: 'Tonight',
