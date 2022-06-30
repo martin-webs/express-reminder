@@ -3,7 +3,9 @@ const passport = require('../middleware/passport');
 const { forwardAuthenticated } = require('../middleware/checkAuth');
 const router = express.Router();
 
-router.get('/login', forwardAuthenticated, (req, res) => res.render('login'));
+router.get('/login', forwardAuthenticated, (req, res) => {
+  res.render('login', { user: undefined});
+});
 
 router.post(
   '/login',
@@ -23,4 +25,3 @@ router.get('/logout', (req, res, next) => {
 });
 
 module.exports = router;
-

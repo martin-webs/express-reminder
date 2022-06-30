@@ -11,7 +11,7 @@ router.get('/', ensureAuthenticated, (req, res) => {
 });
 
 router.get('/new', ensureAuthenticated, (req, res) => {
-  res.render('reminder/create');
+  res.render('reminder/create', { user: req.user });
 });
 
 router.post('/', ensureAuthenticated, (req, res) => {
@@ -33,6 +33,7 @@ router.get('/:id', ensureAuthenticated, (req, res) => {
   if (reminderToFind != undefined) {
     res.render('reminder/single-reminder', {
       reminder: reminderToFind,
+      user: req.user
     });
   } else {
     res.redirect('/reminder');
@@ -46,6 +47,7 @@ router.get('/:id/edit', ensureAuthenticated, (req, res) => {
   if (reminderToFind != undefined) {
     res.render('reminder/edit', {
       reminder: reminderToFind,
+      user: req.user
     });
     req.user.reminders.splice(req.user.reminders.indexOf(reminderToFind), 1);
   } else {
