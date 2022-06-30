@@ -1,23 +1,23 @@
 <div class="card text-bg-primary mb-3 mt-3 mx-auto" style="max-width: 18rem;">
 	<div class="card-header"><strong>
-			<%= reminderItem.title %>
+			<%= reminder.title %>
 		</strong></div>
 	<div class="card-body">
 		<h5 class="card-title">
-			<%= reminderItem.description %>
+			<%= reminder.description %>
 		</h5>
 		<p class="card-text">
-			<%= reminderItem.details %>
+			<%= reminder.details %>
 		</p>
 		<span>Completed:</span>
-		<% if(reminderItem.completed==true) { %>
+		<% if(reminder.completed==true) { %>
 			<span class="badge badge-success">True</span>
-			<% } else if (reminderItem.completed==false) { %>
+			<% } else if (reminder.completed==false) { %>
 				<span class="badge badge-danger">False</span>
 				<% } %>
 					<div class="d-flex justify-content-between mt-3">
-						<a class="btn btn-primary" href=<%="/reminder/" + reminderItem.id + "/edit" %>>Edit</a>
-						<a class="btn btn-primary" href=<%="/reminder/" + reminderItem.id + "/delete" %>>Delete</a>
+						<a class="btn btn-primary" href=<%="/reminder/" + reminder.id + "/edit" %>>Edit</a>
+						<a class="btn btn-primary" href=<%="/reminder/" + reminder.id + "/delete" %>>Delete</a>
 					</div>
 				</div>
 			</div>

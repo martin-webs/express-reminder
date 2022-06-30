@@ -32,7 +32,7 @@ let database = [
         completed: false,
       },
 			{
-        title: 'Piano}',
+        title: 'Piano',
         description: 'Buy two movies',
         details: 'Tonight',
         completed: false,

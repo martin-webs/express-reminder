@@ -46,14 +46,13 @@ app.use((req, res, next) => {
 app.use('/', indexRoute);
 app.use('/auth', authRoute);
 // case 2: user goes to localhost:8000/reminder  -> show a list of reminders
-// app.get('/reminder', reminderController.list);
 app.use('/reminder', reminderRoute);
 
 // case 3: user goes to localhost:8000/reminder/new  -> show a CREATE REMINDER PAGE
-// app.get('/reminder/new', reminderController.new);
+app.get('/reminder/new', reminderRoute);
 
 // case 4: user sends reminder data to us (creates a reminder)
-// app.post('/reminder', reminderController.create);
+// app.use('/reminder', reminderRoute);
 
 // case 5: user wants to see an individual reminder
 // app.get('/reminder/:id', reminderController.listOne);

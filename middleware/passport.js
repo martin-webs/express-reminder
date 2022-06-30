@@ -18,6 +18,7 @@ const localLogin = new LocalStrategy(
 
 passport.serializeUser(function (user, done) {
   done(null, user.id);
+  // console.log(req.session.passport.user)
 });
 
 passport.deserializeUser(function (id, done) {
