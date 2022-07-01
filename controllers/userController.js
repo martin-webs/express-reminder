@@ -1,4 +1,5 @@
 const userModel = require('../models/userModel').userModel;
+const database = require('../models/userModel').database;
 
 const getUserByEmailIdAndPassword = (email, password) => {
   let user = userModel.findOne(email);
@@ -16,6 +17,23 @@ const getUserById = (id) => {
     return user;
   }
   return null;
+};
+
+const getUserByGithubIdOrCreate = (profile) => {
+  let user = userModel.findProfileEmail(profile.email);
+  if (user) {
+    return user;
+  } else {
+    let user = {
+      id: database.length + 1,
+      name: profile.name,
+      email: profile.email,
+      password: 'adsdf21dX!',
+      reminders: []
+    };
+    database.push(user);
+    return user;
+  }
 };
 
 function isUserValid(user, password) {

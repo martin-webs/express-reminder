@@ -3,10 +3,9 @@ const ejsLayouts = require('express-ejs-layouts');
 const session = require('express-session');
 const app = express();
 const path = require('path');
+require('dotenv').config();
 const port = process.env.port || 3000;
-
 const reminderRoute = require('./routes/reminderRoute');
-// const reminderController = require('./controllers/reminder_controller');
 
 app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname + '/public')));

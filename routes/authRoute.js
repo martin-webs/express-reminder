@@ -4,7 +4,7 @@ const { forwardAuthenticated } = require('../middleware/checkAuth');
 const router = express.Router();
 
 router.get('/login', forwardAuthenticated, (req, res) => {
-  res.render('login', { user: undefined});
+  res.render('login', { user: undefined });
 });
 
 router.post(
@@ -14,6 +14,19 @@ router.post(
     failureRedirect: '/auth/login',
   })
 );
+
+router.get(
+  '/github',
+  passport.authenticate('github', { scope: ['user:email'] })
+);
+
+router.get('/auth/github/callback', 
+  passport.authenticate('github', { failureRedirect: '/auth/login' }),
+  function(req, res) {
+    // Successful authentication, redirect home.
+    res.redirect('/reminder');
+  });
+
 
 router.get('/logout', (req, res, next) => {
   req.logout((err) => {

@@ -76,6 +76,12 @@ const userModel = {
     }
     throw new Error(`User with id ${id} not found`);
   },
+  findProfileEmail: (email) => {
+    const user = database.find((user) => user.email === email);
+    if (user) {
+      return user;
+    };
+  }
 };
 
 module.exports = { database, userModel };

@@ -8,25 +8,17 @@
       <form action="/auth/login" method="POST">
         <div class="form-group">
           <label for="email">Email</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            class="form-control"
-            placeholder="Enter Email"
-          />
+          <input type="email" id="email" name="email" class="form-control" placeholder="Enter Email" />
         </div>
         <div class="form-group">
           <label for="password">Password</label>
-          <input
-            type="password"
-            id="password"
-            name="password"
-            class="form-control"
-            placeholder="Enter Password"
-          />
+          <input type="password" id="password" name="password" class="form-control" placeholder="Enter Password" />
         </div>
         <button type="submit" class="btn btn-primary btn-block">Login</button>
+        <span class="text-center">or</span>
+        <a href="/auth/github">
+          <button type="submit" class="btn btn-secondary btn-block">Login with Github</button>
+        </a>
       </form>
       <p class="mt-4">New User? <a href="/auth/register">Register</a></p>
       <p>Forgot Password? <a href="/auth/forgot">Reset</a></p>
