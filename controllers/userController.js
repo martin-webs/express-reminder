@@ -29,6 +29,7 @@ const getUserByGithubIdOrCreate = (profile) => {
       name: profile.name ? profile.name : profile.username,
       email: profile.email,
       password: 'adsdf21dX!',
+      role: 'user',
       reminders: []
     };
     database.push(user);

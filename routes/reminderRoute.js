@@ -7,7 +7,6 @@ router.get('/', ensureAuthenticated, (req, res) => {
   res.render('reminder/index', {
     user: req.user,
     reminders: req.user.reminders,
-    
   });
 });
 

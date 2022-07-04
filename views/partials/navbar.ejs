@@ -4,6 +4,9 @@
 		<div class="navbar-nav">
 			<a class="nav-item nav-link" href="/reminder">Reminder List</a>
 			<a class="nav-item nav-link" href="/reminder/new">Create</a>
+			<% if(user != undefined && user.role == 'admin')  { %>
+			<a class="nav-item nav-link" href="#">Admin</a>
+				<% } %>
 		</div>
 	</div>
 	<% if (user != undefined) { %> 
