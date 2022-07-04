@@ -15,10 +15,12 @@
           <input type="password" id="password" name="password" class="form-control" placeholder="Enter Password" />
         </div>
         <button type="submit" class="btn btn-primary btn-block">Login</button>
-        <span class="text-center">or</span>
-        <a href="/auth/github">
+      </form>
+      <span class="text-center">or</span>
+      <form action="/auth/github" method="POST">
+        <!-- <a href="https://github.com"> -->
           <button type="submit" class="btn btn-secondary btn-block">Login with Github</button>
-        </a>
+        <!-- </a> -->
       </form>
       <p class="mt-4">New User? <a href="/auth/register">Register</a></p>
       <p>Forgot Password? <a href="/auth/forgot">Reset</a></p>
