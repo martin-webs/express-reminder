@@ -4,6 +4,7 @@ let database = [
     name: "Jimmy Smith",
     email: "jimmy123@gmail.com",
     password: "jimmy123!",
+    role: "admin",
     reminders: [
       { reminderId: 1,
         title: 'Birthdays',
@@ -24,6 +25,7 @@ let database = [
     name: "Johnny Doe",
     email: "johnny123@gmail.com",
     password: "johnny123!",
+    role: "user",
     reminders: [
       // { reminderId: 1,
       //   title: 'Soccer',
@@ -44,6 +46,7 @@ let database = [
     name: "Jonathan Chen",
     email: "jonathan123@gmail.com",
     password: "jonathan123!",
+    role: "user",
     reminders: [
       // { reminderId: 1,
       //   title: 'web',

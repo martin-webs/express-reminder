@@ -1,0 +1,18 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+	<div class="collapse navbar-collapse" id="navbarSupportedContent">
+		<ul class="navbar-nav ml-auto">
+			<li class="nav-item active">
+				<span class="nav-link">Remindly &copy; 2021 - <span class="sr-only">(current)</span></span>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="https://github.com/martin-webs">Github</a>
+			</li>
+			<% if (user.role == 'admin')  { %>
+			<li class="nav-item">
+				<a class="nav-link" href="#">For Admins</a>
+			</li>
+			<% } %>
+		</ul>
+	</div>
+</nav>
+</nav>
