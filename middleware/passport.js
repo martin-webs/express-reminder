@@ -27,9 +27,6 @@ const githubLogin = new GitHubStrategy(
     callbackURL: 'http://localhost:3000/auth/github/callback',
   },
   function (accessToken, refreshToken, profile, done) {
-    // User.findOrCreate({ githubId: profile.id }, function (err, user) {
-    //   return done(err, user);
-    // });
     let user = userController.getUserByGithubIdOrCreate(profile)
     return done(null, user)
   }
