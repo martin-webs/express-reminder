@@ -21,12 +21,13 @@ const getUserById = (id) => {
 
 const getUserByGithubIdOrCreate = (profile) => {
   let user = userModel.findProfileEmail(profile.email);
+  console.log('*******'+profile.username);
   if (user) {
     return user;
   } else {
     let user = {
       id: database.length + 1,
-      name: profile.name,
+      name: profile.name ? profile.name : profile.username,
       email: profile.email,
       password: 'adsdf21dX!',
       reminders: []
