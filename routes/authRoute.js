@@ -37,4 +37,6 @@ router.get('/logout', (req, res, next) => {
   });
 });
 
+router.get('/auth/revoke', )
+
 module.exports = router;

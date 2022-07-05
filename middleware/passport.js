@@ -40,6 +40,7 @@ passport.serializeUser(function (user, done) {
 passport.deserializeUser(function (id, done) {
   let user = userController.getUserById(id);
   if (user) {
+    console.log('User found via desializeUser: ' + user.id);
     done(null, user);
   } else {
     done({ message: 'User not found' }, null);

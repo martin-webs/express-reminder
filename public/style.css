@@ -17,6 +17,10 @@ h6 {
   font-weight: 700;
 }
 
+h1 {
+  font-size: 1.7rem;
+}
+
 header.masthead {
   position: relative;
   background-color: #fff;
@@ -133,4 +137,22 @@ footer.footer {
 .form-signin .checkbox{
   margin-bottom: 10px;
   margin-top: 10px;
+}
+
+/* Admin Dashboard page */
+.small-btn {
+  padding: 0.4rem 0.8rem;
+  font-size: 0.75rem;
+}
+
+.lh-2 {
+  line-height: 2;
+}
+
+.w-30 {
+  width: 30%;
+}
+
+#sessions {
+  margin-bottom: 3rem;
 }

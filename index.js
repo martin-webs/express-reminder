@@ -38,6 +38,8 @@ app.use((req, res, next) => {
   console.log(req.session);
   console.log('Session details are: ');
   console.log(req.session.passport);
+  console.log('/******************');
+  console.log(req.sessionStore);
   next();
 });
 
@@ -46,6 +48,5 @@ app.use('/', indexRoute);
 app.use('/auth', authRoute);
 // case 2: user goes to localhost:8000/reminder  -> show a list of reminders
 app.use('/reminder', reminderRoute);
-
 
 app.listen(port, () => console.log(`Server is running on port ${port}`));
