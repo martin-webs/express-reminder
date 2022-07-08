@@ -11,12 +11,12 @@
 			<% sessions.forEach((key, value)=> { %>
 				<div class="d-flex">
 					<span class="p-2 lh-2">
-						<%= value %>
+						<%= value + 1 %>
 					</span>
 					<span class="w-30 p-2 lh-2">
 						<%= key %>
 					</span>
-					<a href="/auth/revoke" class="btn btn-secondary my-2 small-btn">REVOKE</a>
+						<a href="/auth/revoke?sid=<%=key%>" class="btn btn-secondary my-2 small-btn">REVOKE</a>
 				</div>
 				<% }) %>
 		</div>

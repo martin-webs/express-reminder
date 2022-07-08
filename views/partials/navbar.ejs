@@ -6,9 +6,9 @@
 			<a class="nav-item nav-link" href="/reminder/new">Create</a>
 			<% if(user != undefined && user.role == 'admin')  { %>
 				<!-- <a class="nav-item nav-link" href="/x/admin">Admin</a> -->
-				<form  action="/auth/admin" method="POST">
-					<button class="btn nav-item nav-link text-primary"  type="submit" style="border:0">Admin</button>
-			</form>
+				<!-- <form  action="/auth/admin" method="POST"> -->
+					<a href="/auth/admin" class="btn nav-item nav-link text-primary"  type="submit" style="border:0">Admin</a>
+			<!-- </form> -->
 				<% } %>
 		</div>
 	</div>

@@ -7,7 +7,7 @@ router.get('/login', forwardAuthenticated, (req, res) => {
   res.render('login', { user: undefined });
 });
 
-router.post('/admin', ensureAuthenticated, (req, res) => {
+router.get('/admin', ensureAuthenticated, (req, res) => {
   res.render('admin', {
     req: req,
     user: req.user,
@@ -47,14 +47,13 @@ router.get('/logout', (req, res, next) => {
 });
 
 router.get('/revoke', (req, res, next) => {
-  // req.sessionStore.destroy(req.revokedKey, err => {
-  //   if (err) {
-  //     return next(err);
-  //   }
-  //   // res.redirect('/admin');
-  //   console.log('SessionID to be destroyed: ' + req.revokedKey);
-  //   console.log('Session revoked');
-  // })
+  req.sessionStore.destroy(req.query.sid, err => {
+    if (err) {
+      return next(err);
+    }
+    res.redirect('/auth/admin');
+  })
+  console.log('SessionID to be destroyed: ' + req.query.sid);
   console.log('Active SessionID \n' + Object.keys(req.sessionStore.sessions));
   // res.redirect('/admin',  {
   //   user: req.user,

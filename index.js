@@ -40,9 +40,11 @@ app.use((req, res, next) => {
   console.log('Session details are: ');
   console.log(req.session.passport);
   console.log('/******************');
-  console.log(Object.keys(req.sessionStore.sessions));
-  let valuesObject = Object.values(req.sessionStore.sessions);
-  console.log(valuesObject);
+  // console.log(Object.keys(req.sessionStore.sessions));
+  // let valuesObject = Object.values(req.sessionStore.sessions);
+  // console.log(valuesObject);
+  console.log(req);
+
   next();
 });
 
