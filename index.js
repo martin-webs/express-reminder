@@ -27,6 +27,7 @@ const indexRoute = require('./routes/indexRoute');
 const authRoute = require('./routes/authRoute');
 
 app.use(ejsLayouts);
+app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(passport.initialize());
 app.use(passport.session());
@@ -39,7 +40,9 @@ app.use((req, res, next) => {
   console.log('Session details are: ');
   console.log(req.session.passport);
   console.log('/******************');
-  console.log(req.sessionStore);
+  console.log(Object.keys(req.sessionStore.sessions));
+  let valuesObject = Object.values(req.sessionStore.sessions);
+  console.log(valuesObject);
   next();
 });
 

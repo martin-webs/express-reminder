@@ -3,7 +3,7 @@
 	<p class="lead mb-3">Welcome <%= user.name %>
 	</p>
 	<% if(sessions !=undefined) { %>
-		<div class="d-flex"> 
+		<div class="d-flex">
 			<span class="p-2 lh-2">USER</span>
 			<span class="w-30 p-2 lh-2">SESSION ID</span>
 		</div>
@@ -11,7 +11,7 @@
 			<% sessions.forEach((key, value)=> { %>
 				<div class="d-flex">
 					<span class="p-2 lh-2">
-						<%= parseInt(value) + 1 %>
+						<%= value %>
 					</span>
 					<span class="w-30 p-2 lh-2">
 						<%= key %>
