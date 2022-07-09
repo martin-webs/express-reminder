@@ -1,7 +1,9 @@
+const { config } = require('dotenv');
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
 const GitHubStrategy = require('passport-github2').Strategy;
 const userController = require('../controllers/userController');
+
 const id = process.env.GITHUB_CLIENT_ID;
 const secret = process.env.GITHUB_CLIENT_SECRET;
 const localLogin = new LocalStrategy(

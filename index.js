@@ -3,7 +3,7 @@ const ejsLayouts = require('express-ejs-layouts');
 const session = require('express-session');
 const app = express();
 const path = require('path');
-// require('dotenv').config();
+require('dotenv').config();
 const port = process.env.port || 3000;
 const reminderRoute = require('./routes/reminderRoute');
 
