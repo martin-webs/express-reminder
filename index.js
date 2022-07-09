@@ -3,7 +3,6 @@ const ejsLayouts = require('express-ejs-layouts');
 const session = require('express-session');
 const app = express();
 const path = require('path');
-// require('dotenv').config();
 const port = process.env.port || 3000;
 const reminderRoute = require('./routes/reminderRoute');
 
@@ -39,12 +38,6 @@ app.use((req, res, next) => {
   console.log(req.session);
   console.log('Session details are: ');
   console.log(req.session.passport);
-  console.log('/******************');
-  // console.log(Object.keys(req.sessionStore.sessions));
-  // let valuesObject = Object.values(req.sessionStore.sessions);
-  // console.log(valuesObject);
-  console.log(req);
-
   next();
 });
 

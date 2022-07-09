@@ -4,19 +4,16 @@
 		<div class="navbar-nav">
 			<a class="nav-item nav-link" href="/reminder">Reminder List</a>
 			<a class="nav-item nav-link" href="/reminder/new">Create</a>
-			<% if(user != undefined && user.role == 'admin')  { %>
-				<!-- <a class="nav-item nav-link" href="/x/admin">Admin</a> -->
-				<!-- <form  action="/auth/admin" method="POST"> -->
-					<a href="/auth/admin" class="btn nav-item nav-link text-primary"  type="submit" style="border:0">Admin</a>
-			<!-- </form> -->
+			<% if(user !=undefined && user.role=='admin' ) { %>
+				<a href="/auth/admin" class="btn nav-item nav-link text-primary" type="submit" style="border:0">Admin</a>
 				<% } %>
 		</div>
 	</div>
-	<% if (user != undefined) { %> 
+	<% if (user !=undefined) { %>
 		<a href="/auth/logout"><button class="btn btn-primary d-none d-lg-block">Log Out</button></a>
-	<%	} %>
-		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-			aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
-		</button>
+		<% } %>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+				aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
 </nav>

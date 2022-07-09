@@ -46,7 +46,5 @@ passport.deserializeUser(function (id, done) {
   }
 });
 
-
-// module.exports = [passport.use(localLogin), passport.use(githubLogin)];
 module.exports = passport.use(localLogin);
 module.exports = passport.use(githubLogin);
