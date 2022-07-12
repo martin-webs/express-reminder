@@ -23,7 +23,7 @@ app.use(
 );
 
 const passport = require('./middleware/passport');
-const indexRoute = require('./routes/indexRoute');
+// const indexRoute = require('./routes/indexRoute');
 const authRoute = require('./routes/authRoute');
 
 app.use(ejsLayouts);
@@ -40,16 +40,11 @@ app.use((req, res, next) => {
   console.log('Session details are: ');
   console.log(req.session.passport);
   console.log('/******************');
-  // console.log(Object.keys(req.sessionStore.sessions));
-  // let valuesObject = Object.values(req.sessionStore.sessions);
-  // console.log(valuesObject);
-  console.log(req);
-
   next();
 });
 
 // case 1: user goest to <localhost:3000/  -> Homepage or Landing page
-app.use('/', indexRoute);
+// app.use('/', indexRoute);
 app.use('/auth', authRoute);
 // case 2: user goes to localhost:8000/reminder  -> show a list of reminders
 app.use('/reminder', reminderRoute);
