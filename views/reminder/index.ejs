@@ -1,20 +1,24 @@
 <div class="container">
   <p class="py-3 ">Welcome <span class="text-primary text-uppercase"><strong><%= user.name %></strong></span></p>
+  <div class="d-flex flex-wrap ">
   <% reminders.forEach(reminder => { %>
-  <div class="card text-bg-primary mb-3 mt-3" style="max-width: 18rem;">
+  <div class="card text-bg-primary m-3" style="max-width: 16rem;">
     <div class="card-header"><strong><%= reminder.title %></strong></div>
-    <div class="card-body">
-      <h5 class="card-title"><%= reminder.description %></h5>
-      <p class="card-text"><%= reminder.details %></p>
-      <span>Completed:</span>
-      <% if(reminder.completed == true) { %>
-        <span class="badge badge-success">True</span>
-      <% } else if (reminder.completed == false) { %>
-        <span class="badge badge-danger">False</span>
-      <% } %>  
+    <div class="card-body d-flex flex-column justify-content-between">
+      <div class="text-wrapper">
+        <h5 class="card-title"><%= reminder.description %></h5>
+        <p class="card-text"><%= reminder.details %></p>
+        <span>Completed:</span>
+        <% if(reminder.completed == true) { %>
+          <span class="badge badge-success">True</span>
+        <% } else if (reminder.completed == false) { %>
+          <span class="badge badge-danger">False</span>
+        <% } %>  
+      </div>
       <a class="btn btn-primary d-block mt-3" href=<%= "/reminder/" + reminder.reminderId %>>View</a>
     </div>
   </div>
   <% }) %>
+</div>
 </div>
 
