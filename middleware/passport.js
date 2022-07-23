@@ -6,6 +6,7 @@ const userController = require('../controllers/userController');
 
 const id = process.env.GITHUB_CLIENT_ID;
 const secret = process.env.GITHUB_CLIENT_SECRET;
+const callbackURL = process.env.GITHUB_CALLBACK_URL;
 const localLogin = new LocalStrategy(
   {
     usernameField: 'email',
@@ -25,7 +26,7 @@ const githubLogin = new GitHubStrategy(
   {
     clientID: id,
     clientSecret: secret,
-    callbackURL: 'http://localhost:3000/auth/github/callback',
+    callbackURL: callbackURL,
   },
   function (accessToken, refreshToken, profile, done) {
     let user = userController.getUserByGithubIdOrCreate(profile)
