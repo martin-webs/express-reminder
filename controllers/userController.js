@@ -21,6 +21,12 @@ const getUserById = (id) => {
 
 const getUserByGithubIdOrCreate = (profile) => {
   let user = userModel.findProfileEmail(profile.email);
+  console.log('*********');
+  console.log('Starting here...');
+  console.log(profile);
+  console.log('*********');
+  console.log('Finishing here...');
+
   if (user) {
     return user;
   } else {
