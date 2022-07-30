@@ -33,7 +33,6 @@ router.post(
 router.get('/github/callback', 
   passport.authenticate('github', { failureRedirect: '/auth/login' }),
   function(req, res) {
-    // Successful authentication, redirect home.
     res.redirect('/reminder');
   });
 
@@ -56,10 +55,6 @@ router.get('/revoke', (req, res, next) => {
   })
   console.log('SessionID to be destroyed: ' + req.query.sid);
   console.log('Active SessionID \n' + Object.keys(req.sessionStore.sessions));
-  // res.redirect('/admin',  {
-  //   user: req.user,
-	// 	sessions:  Object.keys(req.sessionStore.sessions)
-  // });
 } )
 
 module.exports = router;
