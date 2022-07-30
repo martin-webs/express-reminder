@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon",
+    "withprisma": "ts-node app.ts",
     "migrate": "npx prisma migrate dev",
     "studio": "npx prisma studio"
   },
